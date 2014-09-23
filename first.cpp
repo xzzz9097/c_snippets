@@ -28,6 +28,6 @@ int main()
   // We append a intro, the operation and the newline char
   cout << a << sign << b << " = " << sum << "\n";
 
-  // Return code
+  // Return statement
   return 0;
 }
