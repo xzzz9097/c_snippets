@@ -20,11 +20,11 @@ int main()
 
 	// Calcolo
 	mCirconferenza = 2 * PI * mRaggio;
-	mArea = PI * PI * mRaggio;
+	mArea = PI * mRaggio * mRaggio;
 
 	// Output
 	cout << "Raggio = " << mRaggio << " -> " << " Circonferenza = " << mCirconferenza 
-		 << " Area = " << mArea << endl;
+		 << " Area = " << mArea << " = " << mRaggio * mRaggio << "π" << endl;
 
 	// Risultato di uscita
 	return 0;
