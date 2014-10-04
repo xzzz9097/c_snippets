@@ -6,6 +6,10 @@
 #include <iostream>
 using namespace std;
 
+int sum(int firstNumber, int secondNumber) {
+    return firstNumber + secondNumber;
+}
+
 int main()
 {
     // Initialize vars
@@ -19,7 +23,7 @@ int main()
     bool isSecondNumberPositive = mSecondNumber > 0;
 
     // Do the math
-    int mSum = mFirstNumber + mSecondNumber;
+    int mSum = sum(mFirstNumber, mSecondNumber);
 
     // Just a bit of polish for the negative 2nd number case
     string mSign = isSecondNumberPositive ? " + " : " - ";
