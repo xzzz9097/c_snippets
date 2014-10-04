@@ -11,7 +11,7 @@ const float PI = 3.14;
 int main()
 {
 	// Definizione variabili
-	int mRaggio;
+	float mRaggio, mDoppioRaggio, mQuadratoRaggio;
 	float mCirconferenza, mArea;
 
 	// Input
@@ -19,12 +19,15 @@ int main()
 	cin >> mRaggio;
 
 	// Calcolo
-	mCirconferenza = 2 * PI * mRaggio;
-	mArea = PI * mRaggio * mRaggio;
+	mDoppioRaggio = 2 * mRaggio;
+	mCirconferenza = PI * mDoppioRaggio;
+	mQuadratoRaggio = mRaggio * mRaggio;
+	mArea = PI * mQuadratoRaggio;
 
 	// Output
-	cout << "Raggio = " << mRaggio << " -> " << " Circonferenza = " << mCirconferenza 
-		 << " Area = " << mArea << " = " << mRaggio * mRaggio << "π" << endl;
+	cout << "Raggio = " << mRaggio << " -> ";
+	cout << "Circonferenza = " << mDoppioRaggio << "π = " << mCirconferenza << " | ";
+	cout << "Area = " << mQuadratoRaggio << "π = " << mArea << endl;
 
 	// Risultato di uscita
 	return 0;
