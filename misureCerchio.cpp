@@ -18,16 +18,22 @@ int main()
 	cout << "Inserisci la lunghezza del raggio: ";
 	cin >> mRaggio;
 
-	// Calcolo
-	mDoppioRaggio = 2 * mRaggio;
-	mCirconferenza = PI * mDoppioRaggio;
-	mQuadratoRaggio = mRaggio * mRaggio;
-	mArea = PI * mQuadratoRaggio;
+	// Condizione raggio
+	if(mRaggio > 0) {
+		// Calcolo
+		mDoppioRaggio = 2 * mRaggio;
+		mCirconferenza = PI * mDoppioRaggio;
+		mQuadratoRaggio = mRaggio * mRaggio;
+		mArea = PI * mQuadratoRaggio;
 
-	// Output
-	cout << "Raggio = " << mRaggio << " -> ";
-	cout << "Circonferenza = " << mDoppioRaggio << "π = " << mCirconferenza << " | ";
-	cout << "Area = " << mQuadratoRaggio << "π = " << mArea << endl;
+		// Output
+		cout << "Raggio = " << mRaggio << " -> ";
+		cout << "Circonferenza = " << mDoppioRaggio << "π = " << mCirconferenza << " | ";
+		cout << "Area = " << mQuadratoRaggio << "π = " << mArea << endl;
+	} else {
+		// Errore
+		cout << "Nessuna circonferenza con raggio = " << mRaggio << endl;
+	}
 
 	// Risultato di uscita
 	return 0;
