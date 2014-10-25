@@ -29,7 +29,7 @@ int main() {
 		if (mA == mB | mA == mC | mB == mC) {
 			// E' isoscele
 			mTipo = TIPO_ISOSCELE;
-			if (mA == mB == mC) {
+			if (mA == mB && mA == mC && mB == mC) {
 				// E' equilatero
 				mTipo = TIPO_EQUILATERO;
 				mArea = mA * sqrt(pow(mA, 2.0) - pow(mA/2, 2.0)) / 2;
