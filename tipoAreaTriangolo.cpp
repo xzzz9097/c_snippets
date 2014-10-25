@@ -68,4 +68,7 @@ int main() {
 	} else {
 		cout << "Non esiste un triangolo con questi lati" << endl;;
 	}
+
+	// Risultato
+	return 0;
 }
