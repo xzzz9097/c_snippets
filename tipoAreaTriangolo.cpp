@@ -26,7 +26,7 @@ int main() {
 	if (mA < mB + mC && mB < mA + mC && mC < mA + mB) {
 		// Esiste il triangolo
 		mTriangolo = true;
-		if (mA == mB | mA == mC | mB == mC) {
+		if (mA == mB || mA == mC || mB == mC) {
 			// E' isoscele
 			mTipo = TIPO_ISOSCELE;
 			if (mA == mB && mA == mC && mB == mC) {
@@ -62,7 +62,7 @@ int main() {
 		}
 
 		// Area
-		if (mTipo == TIPO_ISOSCELE | mTipo == TIPO_EQUILATERO) {
+		if (mTipo == TIPO_ISOSCELE || mTipo == TIPO_EQUILATERO) {
 			cout << "L'area e' " << mArea << endl;
 		}
 	} else {
