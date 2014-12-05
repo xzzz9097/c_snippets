@@ -6,7 +6,7 @@
 #include <cmath>	
 using namespace std;
 
-// Constants definition (java style)
+// Constants definition
 const int ARRAY_LENGTH = 2;
 const char INPUT_PARAMETERS_HINT[] = "Insert a, b and c from ax + by + c = 0";
 const char OUTPUT_SOLUTION_HEADER[] = " solution: ";
@@ -16,12 +16,11 @@ float calculateDelta(float a, float b, float c) {
 	return (pow(b, 2.0) - 4 * a * c);
 }
 
-bool hasSolutions(float a, float b, float c) {
-	return calculateDelta(a, b, c) >= 0;
+bool hasSolutions(int delta) {
+	return delta >= 0;
 }
 
-float * createSolutionsArray(float a, float b, float c) {
-	float delta = calculateDelta(a, b, c);
+float * createSolutionsArray(float a, float b, float delta) {
 	// Remember to set the static attribute to our array
 	static float solutionsArray[ARRAY_LENGTH];
 
@@ -51,10 +50,12 @@ int main() {
 	cin >> mA >> mB >> mC;
 
 	// Execution
-	if (hasSolutions(mA, mB, mC)) {
-		// Get the solutions array
-		float * mArrayPointer = createSolutionsArray(mA, mB, mC);
+	float mDelta = calculateDelta(mA, mB, mC);
 
+	// Check if equation has solutions
+	if (hasSolutions(mDelta)) {
+		// Get the solutions array
+		float * mArrayPointer = createSolutionsArray(mA, mB, mDelta);
 		// Read and print the array
 		readArray(mArrayPointer);
 	} else {
