@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <cmath>
-#include <cfloat>
 
 using namespace std;
 
@@ -29,7 +28,7 @@ bool possiedeIntersezioni(int delta) {
 
 float togliSegnoSeZero(float numero) {
 	// Per evitare di avere in output xF o Xv = -0
-	return (numero == 0.0f) ? 0.0f : numero;
+	return (numero == -0.0f) ? 0.0f : numero;
 }
 
 float * creaArrayIntersezioni(float a, float b, float c, float delta) {
@@ -38,9 +37,7 @@ float * creaArrayIntersezioni(float a, float b, float c, float delta) {
 
 	// Assegno le celle dell'array
 	arraySoluzioni[0] = (- b - sqrt(delta)) / (2 * a);
-	arraySoluzioni[1] = 0;
 	arraySoluzioni[2] = (- b + sqrt(delta)) / (2 * a);
-	arraySoluzioni[3] = 0;
 
 	return arraySoluzioni;
 }
@@ -48,9 +45,8 @@ float * creaArrayIntersezioni(float a, float b, float c, float delta) {
 float * creaArrayFuoco(float a, float b, float c, float delta) {	
 	static float arrayFuoco[LUNGHEZZA_ARRAY_PUNTO];
 
-	float numeratore = togliSegnoSeZero(- b);
-	arrayFuoco[0] = (numeratore) / (2 * a);
-	arrayFuoco[1] = (1 - delta) / (4 * a); 
+	arrayFuoco[0] = togliSegnoSeZero((- b) / (2 * a));
+	arrayFuoco[1] = togliSegnoSeZero((1 - delta) / (4 * a));
 
 	return arrayFuoco;
 }
@@ -58,9 +54,8 @@ float * creaArrayFuoco(float a, float b, float c, float delta) {
 float * creaArrayVertice(float a, float b, float c, float delta) {
 	static float arrayVertice[LUNGHEZZA_ARRAY_PUNTO];
 
-	float numeratore = togliSegnoSeZero(- b);
-	arrayVertice[0] = (numeratore) / (2 * a);
-	arrayVertice[1] = (- delta) / (4 * a);
+	arrayVertice[0] = togliSegnoSeZero((- b) / (2 * a));
+	arrayVertice[1] = togliSegnoSeZero((- delta) / (4 * a));
 
 	return arrayVertice;
 }
