@@ -37,7 +37,7 @@ void readArray(float * arrayStart) {
 		   occupied by the array: we retrieve the values by deferencing pointer obtained
 		   by (arrayStart + i), which is the first element for i = 0, the second for
 		   i = 1. Nice! */	
-		cout << i << OUTPUT_SOLUTION_HEADER << *(arrayStart + i) << endl;
+		cout << i << OUTPUT_SOLUTION_HEADER << arrayStart[i] << endl;
 	}
 }
 
