@@ -73,16 +73,21 @@ void leggiArray(float * puntatoreArray, float lunghezzaArray, char titoloOutput[
 }
 
 int main() {
+	// Dichiarazione variabili
 	float mA, mB, mC;
 
+	// Input
 	cout << SUGGERIMENTO_INPUT << endl;
 	cin >> mA >> mB >> mC;
 
+	// Calcolo delta
 	float mDelta = calcolaDelta(mA, mB, mC);
 
+	// Output fuoco e vertice
 	leggiArray(creaArrayFuoco(mA, mB, mC, mDelta), LUNGHEZZA_ARRAY_PUNTO, TITOLO_FUOCO);
 	leggiArray(creaArrayVertice(mA, mB, mC, mDelta), LUNGHEZZA_ARRAY_PUNTO, TITOLO_VERTICE);
 
+	// Output intersezioni asse X se presenti
 	if(possiedeIntersezioni(mDelta)) {
 		leggiArray(creaArrayIntersezioni(mA, mB, mC, mDelta), LUNGHEZZA_ARRAY_INTERSEZIONI, TITOLO_INTERSEZIONI);
 	} else {
