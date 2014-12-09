@@ -31,18 +31,22 @@ float togliSegnoSeZero(float numero) {
 	return (numero == -0.0f) ? 0.0f : numero;
 }
 
-float * creaArrayIntersezioni(float a, float b, float c, float delta) {
+float * creaArrayIntersezioni(float a, float b, float delta) {
 	// Uso l'attributo static per impedire l'alterazione dell'array al di fuori della funzione
 	static float arraySoluzioni[DIM_ARR_INTERSEZIONI];
 
 	// Assegno le celle dell'array
 	arraySoluzioni[0] = (- b - sqrt(delta)) / (2 * a);
 	arraySoluzioni[2] = (- b + sqrt(delta)) / (2 * a);
+	/*
+		arraySoluzioni[1] e arraySoluzioni[3] contengono le y delle intersezioni con l'asse x,
+		che sono pari a 0 e non è quindi necessario assegnare manualmente (0 è il valore di default).
+	*/	
 
 	return arraySoluzioni;
 }
 
-float * creaArrayFuoco(float a, float b, float c, float delta) {	
+float * creaArrayFuoco(float a, float b, float delta) {	
 	static float arrayFuoco[DIM_ARR_PUNTO];
 
 	arrayFuoco[0] = togliSegnoSeZero((- b) / (2 * a));
@@ -51,7 +55,7 @@ float * creaArrayFuoco(float a, float b, float c, float delta) {
 	return arrayFuoco;
 }
 
-float * creaArrayVertice(float a, float b, float c, float delta) {
+float * creaArrayVertice(float a, float b, float delta) {
 	static float arrayVertice[DIM_ARR_PUNTO];
 
 	arrayVertice[0] = togliSegnoSeZero((- b) / (2 * a));
@@ -79,12 +83,12 @@ int main() {
 	float mDelta = calcolaDelta(mA, mB, mC);
 
 	// Output fuoco e vertice
-	leggiCoordinate(creaArrayFuoco(mA, mB, mC, mDelta), DIM_ARR_PUNTO, TITOLO_FUOCO);
-	leggiCoordinate(creaArrayVertice(mA, mB, mC, mDelta), DIM_ARR_PUNTO, TITOLO_VERTICE);
+	leggiCoordinate(creaArrayFuoco(mA, mB, mDelta), DIM_ARR_PUNTO, TITOLO_FUOCO);
+	leggiCoordinate(creaArrayVertice(mA, mB, mDelta), DIM_ARR_PUNTO, TITOLO_VERTICE);
 
 	// Output intersezioni asse X se presenti
 	if(possiedeIntersezioni(mDelta)) {
-		leggiCoordinate(creaArrayIntersezioni(mA, mB, mC, mDelta), DIM_ARR_INTERSEZIONI, TITOLO_INTERSEZIONI);
+		leggiCoordinate(creaArrayIntersezioni(mA, mB, mDelta), DIM_ARR_INTERSEZIONI, TITOLO_INTERSEZIONI);
 	} else {
 		cout << NO_INTERSEZIONI << endl; 
 	}
