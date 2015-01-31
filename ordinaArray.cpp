@@ -8,7 +8,7 @@ using namespace std;
 
 // Costanti
 const int LUNGHEZZA_ARRAY = 5;
-const int MASSIMO_NUMERO_INSERIBILE = 100;
+const int INTERO_MASSIMO = numeric_limits<int>::max();
 
 // Stringhe
 char SUGGERIMENTO_INPUT[] = "Scrivi l'elemento ";
@@ -27,19 +27,31 @@ int * creaArray() {
 	return array;
 }
 
-// Funzione per ordinare un array
+// Funzione per ordinare un array determinando il suo numero minimo più volte.
 int * ordinaArray(int * array) {
+	static int arrayOrdinato[LUNGHEZZA_ARRAY];
+
 	for (int i = 0; i < LUNGHEZZA_ARRAY; ++i) {
+		// Inizializzo le variabili per individuare il numero minimo.
+		int minimoCorrente = INTERO_MASSIMO;
+		int indiceMinimoCorrente;
+
+		// Individuo il numero minimo nell'array.
 		for (int j = 0; j < LUNGHEZZA_ARRAY; ++j) {
-			if (array[i] < array[j]) {
-				int temporaneo = array[i];
-				array[i] = array[j];
-				array[j] = temporaneo;
+			if (array[j] < minimoCorrente) {
+				minimoCorrente = array[j];
+				indiceMinimoCorrente = j;
 			}
 		}
+
+		// Inserisco il minimo ottenuto nel nuovo array e alla sua posizione
+		// nel vecchio inserisco un numero molto grande per 'eliminarlo' dal
+		// calcolo successivo del minimo.
+		arrayOrdinato[i] = minimoCorrente;
+		array[indiceMinimoCorrente] = INTERO_MASSIMO;
 	}
 
-	return array;
+	return arrayOrdinato;
 }
 
 // Funzione per stampare un array.
