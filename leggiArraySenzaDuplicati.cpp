@@ -1,6 +1,6 @@
 /*
 	Leggo in input 10 numeri, poi li stampo non ripetendo quelli
-	inseriti più volte,
+	inseriti più volte.
 */
 
 #include <iostream>

@@ -17,7 +17,7 @@ char DUE_PUNTI[] = " : ";
 
 // Funzione per creare un array riempito con numeri inseriti dall'utente.
 int * creaArray() {
-	static int array[10];
+	static int array[LUNGHEZZA_ARRAY];
 
 	for (int i = 0; i < LUNGHEZZA_ARRAY; ++i) {
 		cout << SUGGERIMENTO_INPUT << i << DUE_PUNTI;
