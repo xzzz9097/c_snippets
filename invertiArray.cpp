@@ -27,7 +27,9 @@ int * creaArray() {
 	return array;
 }
 
-// Funzione per invertire un array
+// Funzione per invertire un array. Per scorrere l'array uso un ciclo con
+// lunghezza massima pari alla metà di quella effettiva (altrimenti l'inversione
+// verrebbe effettuata due volte, ritornando alla situazione iniziale).
 int * invertiArray(int * array) {
 	for (int i = 0; i < LUNGHEZZA_ARRAY / 2; ++i) {
 		// Trovo l'indice dell'elemento opposto a quello corrente
