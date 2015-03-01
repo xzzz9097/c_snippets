@@ -82,7 +82,7 @@ float calcolaScartoQuadratico(int array[]) {
 // lunghezza pari, nell'elemento centrale se la lunghezza è dispari.
 float calcolaMediana(int array[]) {
     return (LUNGHEZZA_ARRAY % 2 == 0) ? 
-        (array[LUNGHEZZA_ARRAY / 2] + array[LUNGHEZZA_ARRAY / 2 - 1]) / 2 : 
+        ((float) array[LUNGHEZZA_ARRAY / 2] + (float) array[LUNGHEZZA_ARRAY / 2 - 1]) / 2 : 
         (array[LUNGHEZZA_ARRAY / 2]);
 }
 
