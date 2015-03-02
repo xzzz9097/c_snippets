@@ -60,7 +60,7 @@ int * sommaBinari(int primoArray[], int secondoArray[]) {
 
 		if (array[i] > 1) {
 			array[i - 1] += array[i] - 1;
-			array[i] = (array[i] % 2);
+			array[i] %= 2;
 		}
 	}
 
