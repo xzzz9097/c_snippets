@@ -11,7 +11,6 @@ using namespace std;
 char INPUT_NOME_FILE[] = "Inserisci il nome del file: ";
 char INPUT_LINEE_TESTO[] = "Inserisci il numero di linee di testo: ";
 char INPUT_LINEA_TESTO[] = "Linea: ";
-char ERRORE_FILE_NON_TROVATO[] = "File non trovato";
 
 string richiediTesto(char SUGGERIMENTO[]) {
     string testo;
