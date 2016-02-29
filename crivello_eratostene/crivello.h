@@ -5,5 +5,5 @@
 #define PRIMI_MASSIMI 1000
 #define SETACCIO_CRIVELLO 2
 
-bool nonDivisibile(int, int *, const int);
+bool divisibile(int, int *, const int);
 int *numeriPrimi(int);

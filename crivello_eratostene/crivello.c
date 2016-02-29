@@ -2,16 +2,18 @@
 
 #include "crivello.h"
 
-bool nonDivisibile(int n, int *d, const int l) {
-    bool nonDivisibile = true;
+bool divisibile(int n, int *d, const int l) {
+    bool divisibile = false;
 
     int i = 0;
-    while (nonDivisibile && i < l) {
-        nonDivisibile = (n % d[i]) != 0;
+    // Verifico che il numero sia divisibile per
+    // almeno uno degli elementi dell'array
+    while (!divisibile && i < l) {
+        divisibile = (n % d[i]) == 0;
         i++;
     }
 
-    return nonDivisibile;
+    return divisibile;
 }
 
 int *numeriPrimi(int max) {
@@ -19,7 +21,7 @@ int *numeriPrimi(int max) {
 
     int n = 0;
     for (int i = SETACCIO_CRIVELLO; i <= max; i++) {
-        if ((i == SETACCIO_CRIVELLO) | nonDivisibile(i, numeriPrimi, n)) {
+        if ((i == SETACCIO_CRIVELLO) | !divisibile(i, numeriPrimi, n)) {
             numeriPrimi[n] = i;
             n++;
         }
