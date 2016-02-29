@@ -29,3 +29,17 @@ int *numeriPrimi(int max) {
 
     return numeriPrimi;
 }
+
+bool *crivelloEratostene() {
+    static bool numeriPrimi[PRIMI_MASSIMI] = {false};
+
+    for (int i = SETACCIO_CRIVELLO; i < PRIMI_MASSIMI; i++) {
+        if (!numeriPrimi[i]) {
+            for (int j = SETACCIO_CRIVELLO; i * j < PRIMI_MASSIMI; j++) {
+                numeriPrimi[i*j] = true;
+            }
+        }
+    }
+
+    return numeriPrimi;
+}
