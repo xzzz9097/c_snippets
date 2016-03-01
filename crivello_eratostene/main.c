@@ -5,12 +5,12 @@
 int main() {
     clock_t inizio = clock();
 
-    int *mNumeriPrimi = numeriPrimi(100);
+    bool *mNumeriPrimi = crivelloEratostene();
 
-    int i = 0;
-    while (mNumeriPrimi[i] > 0) {
-        printf("%d ", mNumeriPrimi[i]);
-        i++;
+    for (int i = SETACCIO_CRIVELLO; i < PRIMI_MASSIMI; i++) {
+        if (!mNumeriPrimi[i]) {
+            printf("%d ", i);
+        }
     }
 
     clock_t fine = clock();
