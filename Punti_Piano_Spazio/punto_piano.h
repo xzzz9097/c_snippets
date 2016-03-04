@@ -6,7 +6,8 @@ public:
     PuntoPiano(double, double);
     double calcolaDistanza();
     void setX(double);
-    double getX();
+    double getX() const;
     void setY(double);
-    double getY();
+    double getY() const;
+    PuntoPiano operator+(const PuntoPiano &);
 };

@@ -6,5 +6,6 @@ public:
     PuntoSpazio(double, double, double);
     double calcolaDistanza();
     void setZ(double);
-    double getZ();
+    double getZ() const;
+    PuntoSpazio operator+(const PuntoSpazio &);
 };

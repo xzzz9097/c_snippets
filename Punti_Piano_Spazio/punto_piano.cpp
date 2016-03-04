@@ -13,7 +13,7 @@ void PuntoPiano::setX(double x) {
     PuntoPiano::x = x;
 }
 
-double PuntoPiano::getX() {
+double PuntoPiano::getX() const {
     return x;
 }
 
@@ -21,6 +21,10 @@ void PuntoPiano::setY(double y) {
     PuntoPiano::y = y;
 }
 
-double PuntoPiano::getY() {
+double PuntoPiano::getY() const {
     return y;
+}
+
+PuntoPiano PuntoPiano::operator+(const PuntoPiano &p) {
+    return PuntoPiano(getX() + p.getX(), getY() + p.getY());
 }

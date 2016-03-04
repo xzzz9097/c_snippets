@@ -12,6 +12,10 @@ void PuntoSpazio::setZ(double z) {
     PuntoSpazio::z = z;
 }
 
-double PuntoSpazio::getZ() {
+double PuntoSpazio::getZ() const {
     return z;
+}
+
+PuntoSpazio PuntoSpazio::operator+(const PuntoSpazio &p) {
+    return PuntoSpazio(getX() + p.getX(), getY() + p.getY(), getZ() + p.getZ());
 }
