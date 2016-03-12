@@ -1,6 +1,5 @@
 /* File implementazione per Quick Sort */
 
-#include <stdio.h>
 #include "quick_sort.h"
 
 void scambia(int *array, int i, int j) {
