@@ -8,7 +8,7 @@ void scambia(int *array, int i, int j) {
     array[j] = temp;
 }
 
-int quickSort(int *array, int inizio, int fine) {
+void quickSort(int *array, int inizio, int fine) {
     if (fine > inizio) {
         int i = inizio;
         int j = fine;
