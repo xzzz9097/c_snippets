@@ -15,10 +15,12 @@ void quickSort(int *array, int inizio, int fine) {
         int perno = inizio;
 
         while (i < j) {
+            // Scorro l'array verso sinistra
             while (array[i] <= array[perno] && i <= fine) {
                 i++;
             }
 
+            // Scorro l'array verso destra
             while (array[j] > array[perno] && i >= inizio) {
                 j--;
             }
