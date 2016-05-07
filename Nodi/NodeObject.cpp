@@ -12,13 +12,13 @@ void NodeObject::addOnTop(int content) {
 }
 
 void NodeObject::removeFromTop() {
-    struct Node *updatedNode = new Node;
+    struct Node *deletedNode = new Node;
 
-    updatedNode = node -> next;
+    deletedNode = node;
 
-    delete node;
+    node = node -> next;
 
-    node = updatedNode;
+    delete deletedNode;
 }
 
 void NodeObject::print() {
