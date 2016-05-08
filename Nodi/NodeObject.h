@@ -8,9 +8,14 @@ class NodeObject {
         Node *next;
     };
 
-    struct Node *node = NULL;
+    struct Node *node;
 public:
+    NodeObject();
+    NodeObject(int, struct Node *);
+
     void addOnTop(int);
     void removeFromTop();
     void print();
+
+    struct Node * getNode();
 };

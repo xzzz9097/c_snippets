@@ -2,6 +2,17 @@
 
 using namespace std;
 
+NodeObject::NodeObject() {
+    node = NULL;
+}
+
+NodeObject::NodeObject(int content, struct Node *next) {
+    node = new Node;
+
+    node -> content = content;
+    node -> next = next;
+}
+
 void NodeObject::addOnTop(int content) {
     struct Node *updatedNode = new Node;
 
@@ -29,4 +40,8 @@ void NodeObject::print() {
         cout << "Element: " << helperNode -> content << endl;
         helperNode = helperNode -> next;
     }
+}
+
+struct NodeObject::Node * NodeObject::getNode() {
+    return node;
 }
