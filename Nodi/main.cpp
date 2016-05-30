@@ -7,6 +7,8 @@ int main() {
 
     mNode.addOnTop(5);
     mNode.addOnTop(4);
+    
+    mNode.removeFromTop();
 
     mNode.print();
 }
