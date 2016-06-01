@@ -3,12 +3,17 @@
 using namespace std;
 
 int main() {
-    NodeObject mNode;
+    NodeObject mList;
 
-    mNode.addOnTop(5);
-    mNode.addOnTop(4);
-    
-    mNode.removeFromTop();
+    mList.addOnTop(5);
+    mList.addOnTop(4);
+    mList.addOnTop(7);
 
-    mNode.print();
+    struct NodeObject::Node * mNode = mList.searchNode(6);
+
+    if (mNode != NULL) {
+        cout << mNode -> content << endl;
+    }
+
+    mList.print();
 }
