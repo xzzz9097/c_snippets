@@ -45,3 +45,18 @@ void NodeObject::print() {
 struct NodeObject::Node * NodeObject::getNode() {
     return node;
 }
+
+struct NodeObject::Node * NodeObject::searchNode(int content) {
+    struct Node *helperNode = new Node;
+
+    helperNode = node;
+    while (helperNode != NULL) {
+        if (helperNode -> content == content) {
+            return helperNode;
+        } else {
+            helperNode = helperNode -> next;
+        }
+    }
+
+    return NULL;
+}
