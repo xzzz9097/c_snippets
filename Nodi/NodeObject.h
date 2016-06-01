@@ -3,11 +3,13 @@
 #include <stddef.h>
 
 class NodeObject {
+  public:
     struct Node {
         int content;
         Node *next;
     };
 
+  private:
     struct Node *node;
 public:
     NodeObject();
@@ -18,4 +20,5 @@ public:
     void print();
 
     struct Node * getNode();
+    struct Node * searchNode(int);
 };
